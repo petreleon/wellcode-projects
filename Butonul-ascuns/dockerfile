@@ -1,0 +1,17 @@
+# Imagine de bază Node.js (Alpine pentru dimensiune mică)
+FROM node:20-alpine
+
+# Setăm directorul de lucru
+WORKDIR /app
+
+# Instalăm utilitare necesare
+RUN apk add --no-cache git
+
+# Expunem portul standard pentru React dev server
+EXPOSE 3000
+
+# Scriptul de entrypoint va inițializa proiectul dacă e necesar și va porni serverul
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
+ENTRYPOINT ["/entrypoint.sh"]
