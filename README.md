@@ -11,6 +11,7 @@ Această serie conține proiecte mici și independente, fiecare având propriul 
 | # | Proiect | Tehnologii | Descriere |
 |---|---------|------------|-----------|
 | 1 | [Semafor](Semafor/) | HTML5, Bootstrap, JS vanilla | Semafor interactiv cu toggle automat/manual |
+| 2 | [Butonul Ascuns](Butonul-ascuns/) | React | Proiect interactiv cu un buton ascuns |
 
 ## Tehnologii (nivel workspace)
 
@@ -20,31 +21,43 @@ Această serie conține proiecte mici și independente, fiecare având propriul 
 
 ## Cum rulezi un proiect
 
-Fiecare proiect are target-uri proprii în `Makefile`. De exemplu, pentru **Semafor**:
+Fiecare proiect are target-uri proprii în `Makefile`.
 
-### 1. Build imagine Docker
+### Semafor
 
+**1. Build imagine Docker**
 ```bash
 make semafor-build
 ```
 
-### 2. Rulează containerul
-
+**2. Rulează containerul**
 ```bash
 make semafor-run
 ```
-
 Aplicația va fi disponibilă la: [http://localhost:8080](http://localhost:8080)
 
-> Containerul montează directorul `src/` al proiectului direct în Nginx, deci orice modificare în cod este reflectată instant fără rebuild.
+### Butonul Ascuns
+
+**1. Build imagine Docker**
+```bash
+make butonul-ascuns-build
+```
+
+**2. Rulează containerul**
+```bash
+make butonul-ascuns-run
+```
+Aplicația va fi disponibilă la un port alocat automat (de obicei [http://localhost:3000](http://localhost:3000)), care va fi afișat în consolă la pornire.
+
+> Containerele montează de regulă directorul `src/` al proiectelor, deci orice modificare în cod este reflectată instant fără rebuild.
 
 ## Scop
 
-Aceste proiecte au rol de **încălzire** — ne reamintim cum să:
-- structurăm proiecte web minimaliste
-- containerizăm aplicații statice cu Docker
-- automatizăm comenzile cu Make
-- explorăm diverse tehnologii frontend fără framework-uri complexe
+Aceste proiecte au rol de **încălzire** — ne reamintim și exersăm cum să:
+- structurăm diverse proiecte web (de la aplicații minimaliste la framework-uri moderne precum React)
+- containerizăm aplicații cu Docker (inclusiv Node/Vite)
+- automatizăm fluxul de dezvoltare cu Make
+- explorăm ecosistemul frontend în practică
 
 ---
 
